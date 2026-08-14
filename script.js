@@ -1,3 +1,45 @@
+const root = document.documentElement;
+const themeToggle = document.getElementById('themeToggle');
+const iconSun = document.getElementById('iconSun');
+const iconMoon = document.getElementById('iconMoon');
+
+function updateToggleIcon(theme) {
+  if (!iconSun || !iconMoon || !themeToggle) return;
+  if (theme === 'dark') {
+    iconSun.classList.remove('hidden');
+    iconMoon.classList.add('hidden');
+    themeToggle.setAttribute('aria-pressed', 'true');
+    themeToggle.setAttribute('aria-label', 'Alternar para tema claro');
+  } else {
+    iconSun.classList.add('hidden');
+    iconMoon.classList.remove('hidden');
+    themeToggle.setAttribute('aria-pressed', 'false');
+    themeToggle.setAttribute('aria-label', 'Alternar para tema escuro');
+  }
+}
+
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    root.classList.add('dark');
+  } else {
+    root.classList.remove('dark');
+  }
+  localStorage.setItem('theme', theme);
+  updateToggleIcon(theme);
+}
+
+(function initTheme() {
+  const isDark = root.classList.contains('dark');
+  updateToggleIcon(isDark ? 'dark' : 'light');
+})();
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const isDark = root.classList.contains('dark');
+    applyTheme(isDark ? 'light' : 'dark');
+  });
+}
+
 document.getElementById('menuBtn').addEventListener('click', () => {
   document.getElementById('mobileMenu').classList.toggle('hidden');
 });
