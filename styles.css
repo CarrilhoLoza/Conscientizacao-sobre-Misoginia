@@ -82,9 +82,10 @@ h1, h2, h3, .font-display { font-family: 'Playfair Display', serif; }
 ::-webkit-scrollbar-thumb { background: #bb76d1; border-radius: 10px; }
 
 .lace-divider {
-  height: 24px;
-  background-image: radial-gradient(circle at 12px 0, transparent 10px, #f3e9f7 11px);
-  background-size: 24px 24px;
+  height: 18px;
+  background:
+          radial-gradient(circle, #d3a3e3 18%, transparent 19%) 0 0 / 18px 18px repeat-x;
+  opacity: 0.6;
 }
 
 .ribbon-icon {
