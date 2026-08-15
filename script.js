@@ -4,17 +4,12 @@ const iconSun = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
 
 function updateToggleIcon(theme) {
-  if (!iconSun || !iconMoon || !themeToggle) return;
   if (theme === 'dark') {
     iconSun.classList.remove('hidden');
     iconMoon.classList.add('hidden');
-    themeToggle.setAttribute('aria-pressed', 'true');
-    themeToggle.setAttribute('aria-label', 'Alternar para tema claro');
   } else {
     iconSun.classList.add('hidden');
     iconMoon.classList.remove('hidden');
-    themeToggle.setAttribute('aria-pressed', 'false');
-    themeToggle.setAttribute('aria-label', 'Alternar para tema escuro');
   }
 }
 
@@ -72,3 +67,5 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     document.getElementById('mobileMenu').classList.add('hidden');
   });
 });
+
+
