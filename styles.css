@@ -88,12 +88,13 @@ html.dark ::-webkit-scrollbar-track { background: #341745; }
 html.dark ::-webkit-scrollbar-thumb { background: #7f3999; }
 
 .lace-divider {
-  height: 24px;
-  background-image: radial-gradient(circle at 12px 0, transparent 10px, #f3e9f7 11px);
-  background-size: 24px 24px;
+  height: 18px;
+  background:
+          radial-gradient(circle, #d3a3e3 18%, transparent 19%) 0 0 / 18px 18px repeat-x;
+  opacity: 0.6;
 }
 html.dark .lace-divider {
-  background-image: radial-gradient(circle at 12px 0, transparent 10px, #341745 11px);
+  background-image: radial-gradient(circle, #341745 18%, transparent 19%);
 }
 
 .ribbon-icon {
